@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gustavo Okamoto | Endpoint Detection & EDR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #0e0e11;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1, h2, h3 {
+      color: #ffffff;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #a0a0a0;
+      margin-bottom: 30px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    .project {
+      background: #15151c;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .project h3 {
+      margin-top: 0;
+    }
+    a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .stack span {
+      background: #1f1f2b;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #cfcfcf;
+    }
+    footer {
+      border-top: 1px solid #222;
+      padding-top: 20px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Gustavo Okamoto</h1>
+      <div class="subtitle">
+        Endpoint Security | EDR & Detection Engineering
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About</h2>
+      <p>
+        I focus on endpoint threat detection and prevention in Windows environments,
+        with an EDR-driven mindset. My work is centered on behavioral analysis,
+        telemetry correlation, and detection logic design rather than tool-specific signatures.
+      </p>
+      <p>
+        I build and document realistic detection scenarios based on MITRE ATT&CK,
+        including blocked attack attempts in hardened corporate environments.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Selected Projects</h2>
+
+      <div class="project">
+        <h3>EDR Detection of Blocked LOLBin Execution (mshta.exe)</h3>
+        <p>
+          Analysis and detection logic for a blocked execution attempt using
+          <strong>mshta.exe</strong> to access external content in a hardened
+          Windows endpoint environment.
+        </p>
+        <ul>
+          <li>Behavioral detection of LOLBin abuse</li>
+          <li>Sysmon process creation analysis</li>
+          <li>Policy-based prevention visibility</li>
+          <li>Severity assessment and response rationale</li>
+        </ul>
+        <p>
+          <a href="https://github.com/gustavo89587/endpoint-detection" target="_blank">
+            View project on GitHub →
+          </a>
+        </p>
+      </div>
+
+      <!-- Você pode duplicar este bloco para projetos futuros -->
+
+    </section>
+
+    <!-- STACK -->
+    <section>
+      <h2>Technical Stack</h2>
+      <div class="stack">
+        <span>Windows Endpoint Security</span>
+        <span>EDR Concepts</span>
+        <span>Sysmon</span>
+        <span>MITRE ATT&CK</span>
+        <span>Behavioral Detection</span>
+        <span>Incident Response</span>
+        <span>Threat Hunting</span>
+        <span>Python Automation</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2>Contact</h2>
+      <p>
+        <a href="https://www.linkedin.com/in/gustavo-okamoto-de-carvalho-ti" target="_blank">LinkedIn</a> ·
+        <a href="https://github.com/gustavo89587" target="_blank">GitHub</a> ·
+        <a href="mailto:gugaokamoto1@email.com">Email</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        This portfolio focuses on real-world endpoint detection scenarios,
+        emphasizing reasoning, visibility, and prevention.
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
