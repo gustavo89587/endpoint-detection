@@ -3,353 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gustavo Okamoto | SOC / Endpoint Detection / Incident Response</title>
-  <meta name="description" content="Portfolio: SOC/SIEM, Endpoint Detection (EDR), Incident Response Playbooks, and evidence-driven security case studies." />
-
+  <title>Gustavo Okamoto | Endpoint Detection, MDE & IR</title>
   <style>
-    :root{
-      --bg: #0b0c10;
-      --panel: #121521;
-      --panel2:#0f1220;
-      --text: #eaeaea;
-      --muted:#a7abb7;
-      --line:#23283a;
-      --link:#4da6ff;
-      --chip:#1b2140;
-      --chipText:#cfd6ff;
-      --good:#2dd4bf;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 14px;
-    }
-
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
+    body {
+      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(77,166,255,.12), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(45,212,191,.10), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.65;
+      background-color: #0e0e11;
+      color: #eaeaea;
+      line-height: 1.6;
     }
-    a{ color:var(--link); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .container{
+    .container {
       max-width: 980px;
-      margin:auto;
-      padding: 28px 18px 60px;
+      margin: auto;
+      padding: 44px 20px;
     }
-
-    /* Top nav */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      background: rgba(18,21,33,.65);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 12px;
-      z-index: 5;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background: var(--good);
-      box-shadow: 0 0 18px rgba(45,212,191,.35);
-    }
-    .navlinks{
-      display:flex; gap:14px; flex-wrap:wrap;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-    .navlinks a{ color: var(--muted); }
-    .navlinks a:hover{ color: var(--text); text-decoration:none; }
-
-    /* Hero */
-    header.hero{
-      margin-top: 22px;
-      padding: 34px 22px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(18,21,33,.75), rgba(15,18,32,.75));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    h1{
-      margin: 0 0 6px 0;
-      font-size: 2.1rem;
-      line-height:1.2;
-    }
-    .subtitle{
-      color: var(--muted);
+    h1, h2, h3 { color: #ffffff; }
+    h1 { font-size: 2.2rem; margin-bottom: 6px; }
+    .subtitle {
       font-size: 1.05rem;
-      margin-bottom: 18px;
+      color: #a0a0a0;
+      margin-bottom: 22px;
     }
-    .badges{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin: 14px 0 0;
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 34px;
     }
-    .badge{
-      background: rgba(27,33,64,.75);
-      border: 1px solid rgba(35,40,58,.9);
-      color: var(--chipText);
-      padding: 7px 12px;
+    .badge {
+      background: #1a1a24;
+      border: 1px solid #262637;
+      padding: 6px 12px;
       border-radius: 999px;
-      font-size: .92rem;
+      font-size: 0.9rem;
+      color: #cfcfcf;
     }
-    .cta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 16px;
+    section { margin-bottom: 44px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
-    .btn{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 10px 14px;
+    @media (min-width: 840px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    .project {
+      background: #15151c;
+      border: 1px solid #232332;
+      padding: 20px;
       border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(18,21,33,.7);
-      color: var(--text);
-      text-decoration:none;
     }
-    .btn:hover{ text-decoration:none; border-color: rgba(77,166,255,.55); }
-    .btn.primary{
-      background: rgba(77,166,255,.18);
-      border-color: rgba(77,166,255,.35);
+    .project h3 { margin: 0 0 8px; }
+    .meta {
+      color: #a7a7a7;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
     }
-
-    section{ margin-top: 28px; }
-    h2{
-      font-size: 1.35rem;
-      margin: 0 0 12px 0;
+    a { color: #4da6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    p{ margin: 10px 0; color: var(--text); }
-    .muted{ color: var(--muted); }
-
-    /* Cards */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .card{
-      grid-column: span 12;
-      background: rgba(18,21,33,.75);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px 18px;
-      box-shadow: var(--shadow);
-    }
-    .card h3{
-      margin: 0 0 6px 0;
-      font-size: 1.05rem;
-    }
-    .meta{
-      font-size: .95rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .list{
-      margin: 10px 0 0 0;
-      padding-left: 18px;
-      color: var(--text);
-    }
-    .chips{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top: 12px;
-    }
-    .chip{
-      background: rgba(27,33,64,.65);
-      border: 1px solid rgba(35,40,58,.9);
-      color: var(--chipText);
-      padding: 6px 10px;
+    .stack span {
+      background: #1f1f2b;
+      padding: 6px 12px;
       border-radius: 999px;
-      font-size: .85rem;
+      font-size: 0.9rem;
+      color: #cfcfcf;
     }
-
-    /* Two columns on desktop */
-    @media (min-width: 860px){
-      .card.span6{ grid-column: span 6; }
-      .card.span4{ grid-column: span 4; }
+    .cta {
+      background: #12121a;
+      border: 1px solid #242436;
+      padding: 18px 20px;
+      border-radius: 12px;
     }
-
-    footer{
-      margin-top: 36px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .95rem;
+    footer {
+      border-top: 1px solid #222;
+      padding-top: 18px;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
 
-    <div class="topbar">
-      <div class="brand"><span class="dot"></span> Gustavo Okamoto</div>
-      <div class="navlinks">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#how-i-work">How I work</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-
-    <header class="hero">
-      <h1>Cybersecurity Analyst (SOC/SIEM) · Endpoint Detection · Incident Response</h1>
+    <!-- HEADER -->
+    <header>
+      <h1>Gustavo Okamoto</h1>
       <div class="subtitle">
-        Evidence-driven security case studies: I document <strong>triage → investigation → response → improvements</strong>
-        with a focus on Windows telemetry, behavioral detection, and repeatable playbooks.
+        Cybersecurity Analyst | SOC/SIEM | Threat Detection & IR
       </div>
 
       <div class="badges">
-        <span class="badge">SOC / Alert Triage</span>
-        <span class="badge">Threat Detection</span>
-        <span class="badge">Incident Response</span>
-        <span class="badge">Windows Telemetry</span>
+        <span class="badge">Endpoint Detection</span>
+        <span class="badge">Microsoft Defender for Endpoint (MDE)</span>
         <span class="badge">MITRE ATT&CK</span>
-        <span class="badge">Sysmon Concepts</span>
-      </div>
-
-      <div class="cta">
-        <a class="btn primary" href="https://github.com/gustavo89587" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/gustavo-okamoto-de-carvalho-ti" target="_blank">LinkedIn</a>
-        <a class="btn" href="https://github.com/gustavo89587/soc-incident-response-playbooks" target="_blank">IR Playbooks</a>
+        <span class="badge">Incident Response Playbooks</span>
+        <span class="badge">Windows Telemetry</span>
       </div>
     </header>
 
-    <section id="about">
+    <!-- ABOUT -->
+    <section>
       <h2>About</h2>
-      <p class="muted">
-        My work focuses on building and documenting realistic detection and response workflows.
-        I prioritize context and evidence over tool-specific buzzwords — the goal is accurate decisions and faster response.
+      <p>
+        I focus on endpoint threat detection and response in Windows environments, with a practical SOC mindset:
+        triage alerts, validate context, map behavior to MITRE ATT&CK, and document the response workflow end-to-end.
       </p>
-      <p class="muted">
-        Topics I emphasize: suspicious process behavior, logon anomalies, LOLBin abuse, investigation logic,
-        and playbooks that reduce false positives and analyst uncertainty.
+      <p>
+        My projects emphasize reasoning and evidence: what fired, why it matters, how to validate false positives,
+        and what containment steps reduce risk quickly.
       </p>
     </section>
 
-    <section id="projects">
-      <h2>Selected Projects</h2>
+    <!-- PROJECTS -->
+    <section>
+      <h2>Featured Projects</h2>
 
       <div class="grid">
 
-        <div class="card span6">
-          <h3>Endpoint Detection — Blocked LOLBin Execution (mshta.exe)</h3>
-          <div class="meta">Case study · Windows telemetry · Behavioral detection</div>
-          <p class="muted">
-            Investigation and detection reasoning for a blocked execution attempt using <strong>mshta.exe</strong>
-            to access external content in a hardened endpoint environment.
-          </p>
-          <ul class="list">
-            <li>Process tree + command-line reasoning</li>
-            <li>Telemetry correlation mindset (not signatures only)</li>
-            <li>Severity assessment and response rationale</li>
-            <li>Documentation focused on SOC decision-making</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">LOLBin</span>
-            <span class="chip">Windows</span>
-            <span class="chip">Sysmon concepts</span>
-            <span class="chip">Detection logic</span>
-          </div>
-          <p style="margin-top:12px;">
-            <a href="https://github.com/gustavo89587/endpoint-detection" target="_blank">View repo →</a>
-          </p>
-        </div>
-
-        <div class="card span6">
-          <h3>SOC Incident Response Playbooks</h3>
-          <div class="meta">Playbooks · Triage checklists · Repeatable response</div>
-          <p class="muted">
-            Practical playbooks organized by incident type: triage steps, artifacts to collect,
-            TP/FP/BTP decision model, containment actions, and MITRE ATT&CK mapping.
-          </p>
-          <ul class="list">
-            <li>Brute force / password spraying workflows</li>
-            <li>Suspicious PowerShell & LOLBins triage</li>
-            <li>Escalation criteria (when to call N2/IR)</li>
-            <li>Post-incident improvement notes</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">SOC</span>
-            <span class="chip">IR</span>
-            <span class="chip">Playbooks</span>
-            <span class="chip">MITRE ATT&CK</span>
-          </div>
-          <p style="margin-top:12px;">
-            <a href="https://github.com/gustavo89587/soc-incident-response-playbooks" target="_blank">View repo →</a>
-          </p>
-        </div>
-
-        <div class="card span12">
-          <h3>Want to see more?</h3>
-          <p class="muted">
-            My GitHub includes additional labs and repositories around security automation, SOC practice, and documentation.
-            I keep projects focused on practical outcomes: what happened, what evidence supports it, what action to take, and how to improve detections.
-          </p>
+        <div class="project">
+          <h3>Endpoint EDR — Blocked LOLBin Execution (mshta.exe)</h3>
+          <div class="meta">Behavioral detection • Windows telemetry • triage → analysis → response</div>
           <p>
-            <a href="https://github.com/gustavo89587" target="_blank">Open GitHub profile →</a>
+            Detection reasoning for a blocked LOLBin execution attempt using <strong>mshta.exe</strong> to reach external content
+            in a hardened endpoint environment.
+          </p>
+          <ul>
+            <li>Initial triage signals & context validation</li>
+            <li>Process behavior reasoning and suspicious indicators</li>
+            <li>Response decisions (containment/escalation)</li>
+            <li>MITRE ATT&CK alignment</li>
+          </ul>
+          <p>
+            <a href="https://github.com/gustavo89587/endpoint-edr-blocked-lolbin" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </p>
+        </div>
+
+        <div class="project">
+          <h3>Microsoft Defender for Endpoint — Blocked LOLBin (MDE)</h3>
+          <div class="meta">Microsoft security stack • alert validation • incident workflow</div>
+          <p>
+            A Microsoft Defender for Endpoint (MDE) case focused on analyzing a blocked LOLBin activity and documenting
+            what to check next to confirm malicious intent versus authorized behavior.
+          </p>
+          <ul>
+            <li>Alert interpretation and investigation path</li>
+            <li>Evidence-driven decision making</li>
+            <li>Containment & escalation criteria</li>
+            <li>Operational notes for SOC workflows</li>
+          </ul>
+          <p>
+            <a href="https://github.com/gustavo89587/microsoft-defender-endpoint-blocked-lolbin" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
           </p>
         </div>
 
       </div>
     </section>
 
-    <section id="how-i-work">
-      <h2>How I work (SOC mindset)</h2>
-      <div class="grid">
-        <div class="card span4">
-          <h3>1) Detect</h3>
-          <p class="muted">Alert triage: validate signal quality, identify key fields, reduce noise fast.</p>
-        </div>
-        <div class="card span4">
-          <h3>2) Analyze</h3>
-          <p class="muted">Evidence & context: does it make sense as an attack? What’s the storyline?</p>
-        </div>
-        <div class="card span4">
-          <h3>3) Respond & Improve</h3>
-          <p class="muted">Containment first when required, escalation criteria, and detection improvements after.</p>
-        </div>
+    <!-- OPTIONAL: PLAYBOOKS CTA -->
+    <section>
+      <div class="cta">
+        <h2>Incident Response Playbooks</h2>
+        <p>
+          Practical SOC playbooks to standardize triage, analysis, containment, and escalation across common scenarios.
+        </p>
+        <p>
+          <a href="https://github.com/gustavo89587/soc-incident-response-playbooks" target="_blank" rel="noopener noreferrer">
+            Open playbooks repository →
+          </a>
+        </p>
       </div>
     </section>
 
-    <section id="stack">
+    <!-- STACK -->
+    <section>
       <h2>Technical Stack</h2>
-      <div class="chips">
-        <span class="chip">SOC/SIEM Concepts</span>
-        <span class="chip">Windows Security</span>
-        <span class="chip">Endpoint Detection / EDR</span>
-        <span class="chip">Threat Hunting Mindset</span>
-        <span class="chip">MITRE ATT&CK</span>
-        <span class="chip">Incident Response</span>
-        <span class="chip">Python Automation</span>
-        <span class="chip">Documentation</span>
+      <div class="stack">
+        <span>Windows Endpoint Security</span>
+        <span>Microsoft Defender for Endpoint</span>
+        <span>EDR Concepts</span>
+        <span>Sysmon / Windows Events</span>
+        <span>MITRE ATT&CK</span>
+        <span>Behavioral Detection</span>
+        <span>Incident Response</span>
+        <span>Threat Hunting</span>
+        <span>Python Automation</span>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- CONTACT -->
+    <section>
       <h2>Contact</h2>
-      <p class="muted">
-        <a href="https://www.linkedin.com/in/gustavo-okamoto-de-carvalho-ti" target="_blank">LinkedIn</a> ·
-        <a href="https://github.com/gustavo89587" target="_blank">GitHub</a> ·
+      <p>
+        <a href="https://www.linkedin.com/in/gustavo-okamoto-de-carvalho-ti" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+        <a href="https://github.com/gustavo89587" target="_blank" rel="noopener noreferrer">GitHub</a> ·
         <a href="mailto:gugaokamoto1@email.com">Email</a>
       </p>
     </section>
 
     <footer>
       <p>
-        Portfolio focused on practical SOC outcomes: evidence-driven reasoning, repeatable playbooks, and detection improvements.
+        Portfolio focused on evidence-based detection reasoning and SOC-ready response workflows.
       </p>
     </footer>
 
