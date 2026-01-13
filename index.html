@@ -1,220 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gustavo Okamoto | Endpoint Detection, MDE & IR</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #0e0e11;
-      color: #eaeaea;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 980px;
-      margin: auto;
-      padding: 44px 20px;
-    }
-    h1, h2, h3 { color: #ffffff; }
-    h1 { font-size: 2.2rem; margin-bottom: 6px; }
-    .subtitle {
-      font-size: 1.05rem;
-      color: #a0a0a0;
-      margin-bottom: 22px;
-    }
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 10px 0 34px;
-    }
-    .badge {
-      background: #1a1a24;
-      border: 1px solid #262637;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      color: #cfcfcf;
-    }
-    section { margin-bottom: 44px; }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    @media (min-width: 840px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-    .project {
-      background: #15151c;
-      border: 1px solid #232332;
-      padding: 20px;
-      border-radius: 12px;
-    }
-    .project h3 { margin: 0 0 8px; }
-    .meta {
-      color: #a7a7a7;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-    a { color: #4da6ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .stack span {
-      background: #1f1f2b;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      color: #cfcfcf;
-    }
-    .cta {
-      background: #12121a;
-      border: 1px solid #242436;
-      padding: 18px 20px;
-      border-radius: 12px;
-    }
-    footer {
-      border-top: 1px solid #222;
-      padding-top: 18px;
-      color: #777;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
+<!-- ===== PRs (Open-Source Contributions) ===== -->
+<section id="pull-requests" class="section">
   <div class="container">
+    <h2>Pull Requests</h2>
+    <p class="muted">
+      A curated list of my public pull requests across open-source security and telemetry projects.
+    </p>
 
-    <!-- HEADER -->
-    <header>
-      <h1>Gustavo Okamoto</h1>
-      <div class="subtitle">
-        Cybersecurity Analyst | SOC/SIEM | Threat Detection & IR
-      </div>
+    <div class="grid">
 
-      <div class="badges">
-        <span class="badge">Endpoint Detection</span>
-        <span class="badge">Microsoft Defender for Endpoint (MDE)</span>
-        <span class="badge">MITRE ATT&CK</span>
-        <span class="badge">Incident Response Playbooks</span>
-        <span class="badge">Windows Telemetry</span>
-      </div>
-    </header>
-
-    <!-- ABOUT -->
-    <section>
-      <h2>About</h2>
-      <p>
-        I focus on endpoint threat detection and response in Windows environments, with a practical SOC mindset:
-        triage alerts, validate context, map behavior to MITRE ATT&CK, and document the response workflow end-to-end.
-      </p>
-      <p>
-        My projects emphasize reasoning and evidence: what fired, why it matters, how to validate false positives,
-        and what containment steps reduce risk quickly.
-      </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section>
-      <h2>Featured Projects</h2>
-
-      <div class="grid">
-
-        <div class="project">
-          <h3>Endpoint EDR — Blocked LOLBin Execution (mshta.exe)</h3>
-          <div class="meta">Behavioral detection • Windows telemetry • triage → analysis → response</div>
-          <p>
-            Detection reasoning for a blocked LOLBin execution attempt using <strong>mshta.exe</strong> to reach external content
-            in a hardened endpoint environment.
-          </p>
-          <ul>
-            <li>Initial triage signals & context validation</li>
-            <li>Process behavior reasoning and suspicious indicators</li>
-            <li>Response decisions (containment/escalation)</li>
-            <li>MITRE ATT&CK alignment</li>
-          </ul>
-          <p>
-            <a href="https://github.com/gustavo89587/endpoint-edr-blocked-lolbin" target="_blank" rel="noopener noreferrer">
-              View on GitHub →
-            </a>
-          </p>
+      <!-- Wazuh upstream PRs -->
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-upstream">Upstream</span>
+          <span class="badge badge-review">Review Needed</span>
+          <span class="badge badge-windows">Windows</span>
         </div>
-
-        <div class="project">
-          <h3>Microsoft Defender for Endpoint — Blocked LOLBin (MDE)</h3>
-          <div class="meta">Microsoft security stack • alert validation • incident workflow</div>
-          <p>
-            A Microsoft Defender for Endpoint (MDE) case focused on analyzing a blocked LOLBin activity and documenting
-            what to check next to confirm malicious intent versus authorized behavior.
-          </p>
-          <ul>
-            <li>Alert interpretation and investigation path</li>
-            <li>Evidence-driven decision making</li>
-            <li>Containment & escalation criteria</li>
-            <li>Operational notes for SOC workflows</li>
-          </ul>
-          <p>
-            <a href="https://github.com/gustavo89587/microsoft-defender-endpoint-blocked-lolbin" target="_blank" rel="noopener noreferrer">
-              View on GitHub →
-            </a>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- OPTIONAL: PLAYBOOKS CTA -->
-    <section>
-      <div class="cta">
-        <h2>Incident Response Playbooks</h2>
-        <p>
-          Practical SOC playbooks to standardize triage, analysis, containment, and escalation across common scenarios.
-        </p>
-        <p>
-          <a href="https://github.com/gustavo89587/soc-incident-response-playbooks" target="_blank" rel="noopener noreferrer">
-            Open playbooks repository →
+        <h3>
+          <a href="https://github.com/wazuh/wazuh-ruleset/pull/908" target="_blank" rel="noopener">
+            Fix broken Sysmon EventID 1 (ProcessCreate) decoders and normalize regex patterns
           </a>
+        </h3>
+        <p class="meta">Repo: wazuh/wazuh-ruleset · PR #908</p>
+        <p class="desc">
+          Decoder reliability + normalization for Sysmon Process Create telemetry to reduce parsing issues and improve downstream detections.
         </p>
-      </div>
-    </section>
+        <a class="link" href="https://github.com/wazuh/wazuh-ruleset/pull/908" target="_blank" rel="noopener">View PR →</a>
+      </article>
 
-    <!-- STACK -->
-    <section>
-      <h2>Technical Stack</h2>
-      <div class="stack">
-        <span>Windows Endpoint Security</span>
-        <span>Microsoft Defender for Endpoint</span>
-        <span>EDR Concepts</span>
-        <span>Sysmon / Windows Events</span>
-        <span>MITRE ATT&CK</span>
-        <span>Behavioral Detection</span>
-        <span>Incident Response</span>
-        <span>Threat Hunting</span>
-        <span>Python Automation</span>
-      </div>
-    </section>
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-upstream">Upstream</span>
+          <span class="badge badge-review">Review Needed</span>
+          <span class="badge badge-windows">Windows</span>
+        </div>
+        <h3>
+          <a href="https://github.com/wazuh/wazuh-ruleset/pull/909" target="_blank" rel="noopener">
+            Improve Sysmon rule descriptions with triage-relevant context
+          </a>
+        </h3>
+        <p class="meta">Repo: wazuh/wazuh-ruleset · PR #909</p>
+        <p class="desc">
+          Improves analyst guidance: what to validate, expected benign patterns, and triage context to reduce time-to-decision.
+        </p>
+        <a class="link" href="https://github.com/wazuh/wazuh-ruleset/pull/909" target="_blank" rel="noopener">View PR →</a>
+      </article>
 
-    <!-- CONTACT -->
-    <section>
-      <h2>Contact</h2>
-      <p>
-        <a href="https://www.linkedin.com/in/gustavo-okamoto-de-carvalho-ti" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-        <a href="https://github.com/gustavo89587" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-        <a href="mailto:gugaokamoto1@email.com">Email</a>
-      </p>
-    </section>
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-upstream">Upstream</span>
+          <span class="badge badge-review">Review Needed</span>
+          <span class="badge badge-windows">Windows</span>
+        </div>
+        <h3>
+          <a href="https://github.com/wazuh/wazuh-ruleset/pull/910" target="_blank" rel="noopener">
+            rules: remove duplicate Windows Defender errorCode rules
+          </a>
+        </h3>
+        <p class="meta">Repo: wazuh/wazuh-ruleset · PR #910</p>
+        <p class="desc">
+          Removes duplicated Windows Defender errorCode rules to reduce clutter and avoid inconsistent rule behavior.
+        </p>
+        <a class="link" href="https://github.com/wazuh/wazuh-ruleset/pull/910" target="_blank" rel="noopener">View PR →</a>
+      </article>
 
-    <footer>
-      <p>
-        Portfolio focused on evidence-based detection reasoning and SOC-ready response workflows.
-      </p>
-    </footer>
+      <!-- SigmaHQ -->
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-upstream">Upstream</span>
+          <span class="badge badge-review">Review Needed</span>
+          <span class="badge badge-windows">Windows</span>
+        </div>
+        <h3>
+          <a href="https://github.com/SigmaHQ/sigma/pull/5835" target="_blank" rel="noopener">
+            Improve description and false positive guidance for Sysmon configuration change rule
+          </a>
+        </h3>
+        <p class="meta">Repo: SigmaHQ/sigma · PR #5835</p>
+        <p class="desc">
+          Enhances rule documentation with clearer intent and false-positive guidance to improve SOC triage quality.
+        </p>
+        <a class="link" href="https://github.com/SigmaHQ/sigma/pull/5835" target="_blank" rel="noopener">View PR →</a>
+      </article>
 
+      <!-- Elastic fork PR (your repo) -->
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-fork">Fork</span>
+          <span class="badge badge-docs">Docs</span>
+        </div>
+        <h3>
+          <a href="https://github.com/gustavo89587/detection-rules/pull/1" target="_blank" rel="noopener">
+            Docs: improve WinRAR/7-Zip encrypted archive rule guidance
+          </a>
+        </h3>
+        <p class="meta">Repo: gustavo89587/detection-rules · PR #1</p>
+        <p class="desc">
+          Improves documentation and triage guidance for encrypted archive detections to reduce noise and clarify analyst actions.
+        </p>
+        <a class="link" href="https://github.com/gustavo89587/detection-rules/pull/1" target="_blank" rel="noopener">View PR →</a>
+      </article>
+
+      <!-- Your forks in wazuh-ruleset -->
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-fork">Fork</span>
+          <span class="badge badge-windows">Windows</span>
+        </div>
+        <h3>
+          <a href="https://github.com/gustavo89587/wazuh-ruleset/pull/1" target="_blank" rel="noopener">
+            Improve Sysmon rule descriptions with triage-relevant context
+          </a>
+        </h3>
+        <p class="meta">Repo: gustavo89587/wazuh-ruleset · PR #1</p>
+        <p class="desc">
+          Working branch PR in my fork used to stage improvements before upstream submission.
+        </p>
+        <a class="link" href="https://github.com/gustavo89587/wazuh-ruleset/pull/1" target="_blank" rel="noopener">View PR →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-fork">Fork</span>
+          <span class="badge badge-windows">Windows</span>
+        </div>
+        <h3>
+          <a href="https://github.com/gustavo89587/wazuh-ruleset/pull/2" target="_blank" rel="noopener">
+            rules: remove duplicate Windows Defender errorCode rules
+          </a>
+        </h3>
+        <p class="meta">Repo: gustavo89587/wazuh-ruleset · PR #2</p>
+        <p class="desc">
+          Fork PR used to stage cleanup work prior to upstream submission.
+        </p>
+        <a class="link" href="https://github.com/gustavo89587/wazuh-ruleset/pull/2" target="_blank" rel="noopener">View PR →</a>
+      </article>
+
+      <!-- Semantic conventions repo -->
+      <article class="card">
+        <div class="card-head">
+          <span class="badge badge-fork">Fork</span>
+          <span class="badge badge-genai">GenAI</span>
+        </div>
+        <h3>
+          <a href="https://github.com/gustavo89587/semantic-conventions/pull/1" target="_blank" rel="noopener">
+            gen-ai: add requester security/abuse context attributes for requests
+          </a>
+        </h3>
+        <p class="meta">Repo: gustavo89587/semantic-conventions · PR #1</p>
+        <p class="desc">
+          Adds security/abuse context attributes for request telemetry to improve traceability and analysis of requester behavior.
+        </p>
+        <a class="link" href="https://github.com/gustavo89587/semantic-conventions/pull/1" target="_blank" rel="noopener">View PR →</a>
+      </article>
+
+    </div>
   </div>
-</body>
-</html>
+</section>
+
+<!-- ===== Minimal CSS for this section (drop into your stylesheet) ===== -->
+<style>
+  .section { padding: 48px 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  h2 { margin: 0 0 10px; font-size: 28px; letter-spacing: -0.02em; }
+  .muted { margin: 0 0 24px; opacity: .75; line-height: 1.5; }
+
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+  .card {
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px;
+    padding: 16px;
+    background: rgba(255,255,255,.03);
+  }
+  .card-head { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    opacity: .9;
+  }
+  .badge-upstream { }
+  .badge-fork { }
+  .badge-review { }
+  .badge-windows { }
+  .badge-docs { }
+  .badge-genai { }
+
+  .meta { margin: 8px 0 10px; font-size: 13px; opacity: .72; }
+  .desc { margin: 0 0 12px; line-height: 1.55; opacity: .9; }
+  .link { display: inline-block; font-weight: 600; text-decoration: none; }
+  .link:hover { text-decoration: underline; }
+
+  /* Optional: make links inside titles look clean */
+  h3 { margin: 0; font-size: 16px; line-height: 1.35; }
+  h3 a { text-decoration: none; }
+  h3 a:hover { text-decoration: underline; }
+</style>
